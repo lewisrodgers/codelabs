@@ -24,7 +24,7 @@ Before running your pipeline, you must authenticate with the Google Cloud Platfo
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/lewis/Documents/path/to/credentials.json"
 ```
 
-Then pass in pipeline options.
+The `remote.py` uses `argparse` so that we can pass in pipeline options through the command-line.
 
 ```
 python remote.py \

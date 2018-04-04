@@ -10,13 +10,11 @@ def run(argv=None):
   parser = argparse.ArgumentParser()
   parser.add_argument('--input',
                       dest='input',
-                      default='gs://',
+                      required=True,
                       help='Input file to process.')
   parser.add_argument('--output',
                       dest='output',
-                      # CHANGE 1/5: The Google Cloud Storage path is required
-                      # for outputting the results.
-                      default='gs://YOUR_OUTPUT_BUCKET/AND_OUTPUT_PREFIX',
+                      required=True,
                       help='Output file to write results to.')
   known_args, pipeline_args = parser.parse_known_args(argv)
   
