@@ -14,7 +14,7 @@ class Transaction():
         return '<Transaction(name={self.description!r})>'.format(self=self)
 
 
-class TransactionScheme(Schema):
+class TransactionSchema(Schema):
     description = fields.Str()
     amount = fields.Number()
     created_at = fields.Date()
