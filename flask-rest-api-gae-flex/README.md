@@ -1,8 +1,7 @@
+The source code is based on this article:
 https://auth0.com/blog/developing-restful-apis-with-python-and-flask/#why-python
 
-# About
-
-To deploy and run this application in App Engine flexible:
+This application is ready to be deployed to App Engine Flexible:
 
 `app.yaml` is required to be able to deploy to App Engine. Note the `entrypoint` keyword and the use of `gunicorn`.
 
@@ -19,7 +18,7 @@ pipenv shell
 # Serve locally
 
 ```
-gunicorn -b :8080 app.main:app
+./serve.sh
 ```
 
 # Usage

@@ -1,4 +1,4 @@
-https://auth0.com/blog/developing-restful-apis-with-python-and-flask/#why-python
+https://auth0.com/blog/developing-restful-apis-with-python-and-flask/
 
 # Dev dependencies
 
