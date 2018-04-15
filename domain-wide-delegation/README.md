@@ -34,7 +34,7 @@ In our scenario, the development team wants to build an application that accesse
 
 ## The GCP Admin
 
-In order to get this, the development team asks the GCP Admin for a service account with DwD enabled. The GCP Admin chooses a service account and makes the json keyfile available to the developers.
+In order to get the credentials, the development team asks the GCP Admin for a service account with DwD enabled. The GCP Admin chooses a service account and makes the json keyfile available to the developers.
 
 ![service-account-request]
 
@@ -46,7 +46,7 @@ The last step is to register the application with the G Suite domain. To do this
 
 ## Summary
 
-Roles and responsibilities between organizations will differ, so it's important to understand the org structure, who is reponsible for what, how and where to make requests and get approvals.
+Roles and responsibilities between organizations will differ, so it's important to understand the org structure, who is reponsible for what, and how and where to make requests or get approvals.
 
 ### Resources
 * [Using OAuth 2.0 for Server to Server Applications](https://developers.google.com/identity/protocols/OAuth2ServiceAccount)
