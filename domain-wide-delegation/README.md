@@ -1,25 +1,33 @@
-# What setting up domain wide delegation might look like at an enterprise
+# Domain-wide delegation — a visual guide
 
-At the enterprise level, there will be multiple teams or individuals responsible for different aspects of GCP and G Suite administration. Which means, there's a few moving parts when it comes to the setup of domain wide delegation for an application that needs it.
+An application may want to access user data without the need for manual authorization by that user. This involves authorizing a service account to access data on behalf of the user — also referred to as domain-wide delegation (DwD) of authority.
 
-Here's what this might look like...
+For a detailed step-by-step guide in enabling DwD see: [Perform G Suite Domain-Wide Delegation of Authority](https://developers.google.com/admin-sdk/directory/v1/guides/delegation)
+
+The steps boil down to this:
+
+1. A service account is created with DwD enabled
+2. A json keyfile – or credentials – are downloaded
+3. These credentials are used within an application
+4. The API used (Admin SDK, Calendar, Drive, etc) and its scopes are determined within the application
+5. The service account client ID and scopes are applied to the G Suite Admin console
+
+Visually, how the pieces fit together looks something like this...
+
+![overview]
+
+## Separation of concerns
+
+At the enterprise level, there'll be multiple teams or individuals responsible for different aspects of GCP and G Suite administration. Which means, there's going to be some level of coordination when it comes to the setup of DwD for an application that needs it.
+
+Here's an example of what this might look like...
 
 ![complete]
 
-## The Setup
+There are distinct roles responsible for providing and consuming each of these things. Let's say: 
 
-For domain wide delegation (DwD) setup, we need to have 3 things:
-
-1. A service account with DwD enabled
-2. The json keyfile (client ID and secret) associated with the service account
-3. And a list of API scopes
-
-There'll be distinct roles responsible for providing and consuming each of these things that want to coordinate with each other. 
-
-Let's say there are 3 roles: 
-
-1. A developer from the development team
-2. The GCP admin* from the operations team
+1. A developer from the App Dev team
+2. The GCP admin* from the Operations team
 3. And the G Suite domain admininstrator from some other part of IT
 
 _*GCP Admin is a generalized term I'm using to refer to someone who has the permissions to create service accounts, whether it be a GCP Project Owner or a Service Account Admin._
@@ -42,7 +50,7 @@ In order to get the credentials, the development team asks the GCP Admin for a s
 
 ## The G Suite Admin
 
-The last step is to register the application with the G Suite domain. To do this, the G Suite Admin needs to know the client ID of the service account and API scopes the application will use. They'll add these values to the `Manage client API access` page of the G Suite console.
+The last step is to register the application with the G Suite domain. To do this, the G Suite Admin needs to know the client ID of the service account and API scopes the application will use. They'll add these values to the [Manage client API access](https://support.google.com/a/answer/162106?hl=en) page of the G Suite console.
 
 ![gsuite-admin]
 
@@ -52,8 +60,9 @@ The last step is to register the application with the G Suite domain. To do this
 * [Perform Google Apps domain-wide delegation of authority](https://developers.google.com/+/domains/authentication/delegation)
 * [OAuth: Managing API client access](https://support.google.com/a/answer/162106?hl=en)
 
+[overview]: img/overview.png
 [roles]: img/roles.png
 [app-scopes]: img/app_scopes.png
-[service-account-request]: img/service_account_request.png
+[service-account-request]: img/service_account.png
 [gsuite-admin]: img/gsuite_admin.png
 [complete]: img/complete.png
