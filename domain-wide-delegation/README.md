@@ -22,9 +22,11 @@ Let's say there are 3 roles:
 2. The GCP admin* from the operations team
 3. And the G Suite domain admininstrator from some other part of IT
 
-*GCP Admin is a generalized term I'm using to refer to someone who has the permissions to create service accounts, whether it be a GCP Project Owner or a Service Account Admin.
+_*GCP Admin is a generalized term I'm using to refer to someone who has the permissions to create service accounts, whether it be a GCP Project Owner or a Service Account Admin._
 
 ![roles]
+
+The Security team would be a factor in this dance as well, but left out for brevity.
 
 ## The Developer
 
