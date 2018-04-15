@@ -1,4 +1,4 @@
-# How to use domain wide delegation to manipulate a user's Google Calendar
+# How to use domain-wide delegation to manipulate a user's Google Calendar
 
 The basic script in `main.py` demonstrates how one might use domain-wide delegation to access a specific user's calendar to clear their events, without requiring manual authorization from the user.
 
