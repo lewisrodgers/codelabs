@@ -2,7 +2,7 @@
 
 The basic script in `main.py` demonstrates how one might use domain-wide delegation to access a specific user's calendar to clear their events, without requiring manual authorization from the user.
 
-To see how domain-wide delegation fits together in the grand scheme of thing see: [Domain-wide delegation — a visual guide](https://github.com/lewisrodgers/codelabs/tree/master/domain-wide-delegation)
+To see how domain-wide delegation fits together from a 30 thousand feet view see: [Domain-wide delegation — a visual guide](https://github.com/lewisrodgers/codelabs/tree/master/domain-wide-delegation)
 
 Notice that the user's account of the calendar to be manipulated is passed to the `with_subject` method.
 
