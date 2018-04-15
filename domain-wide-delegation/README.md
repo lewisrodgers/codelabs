@@ -44,11 +44,7 @@ The last step is to register the application with the G Suite domain. To do this
 
 ![gsuite-admin]
 
-## Summary
-
-Roles and responsibilities between organizations will differ, so it's important to understand the org structure, who is reponsible for what, and how and where to make requests or get approvals.
-
-### Resources
+## Resources
 * [Using OAuth 2.0 for Server to Server Applications](https://developers.google.com/identity/protocols/OAuth2ServiceAccount)
 * [Perform G Suite Domain-Wide Delegation of Authority](https://developers.google.com/admin-sdk/directory/v1/guides/delegation)
 * [Perform Google Apps domain-wide delegation of authority](https://developers.google.com/+/domains/authentication/delegation)
