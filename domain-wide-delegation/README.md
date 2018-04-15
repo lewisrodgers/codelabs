@@ -18,7 +18,7 @@ Visually, how the pieces fit together looks something like this...
 
 ## Separation of concerns
 
-At the enterprise level, there'll be multiple teams or individuals responsible for different aspects of GCP and G Suite administration. Which means, there's going to be some level of coordination when it comes to the setup of DwD for an application that needs it.
+At the enterprise level, there'll be multiple teams or individuals responsible for different aspects of GCP and G Suite administration. Which means, there's going to be some level of coordination when it comes setting up DwD for an application that needs it.
 
 Here's an example of what this might look like...
 
@@ -30,21 +30,21 @@ There are distinct roles responsible for providing and consuming each of these t
 2. The GCP admin* from the Operations team
 3. And the G Suite domain admininstrator from some other part of IT
 
+The Security team would be a factor in this dance as well, but left out for brevity.
+
 _*GCP Admin is a generalized term I'm using to refer to someone who has the permissions to create service accounts, whether it be a GCP Project Owner or a Service Account Admin._
 
 ![roles]
 
-The Security team would be a factor in this dance as well, but left out for brevity.
-
 ## The Developer
 
-In our scenario, the development team wants to build an application that accesses user data on the domain. They determine the APIs and list of API scopes to be used. What's missing is the json keyfile — or credentials — needed for authentication between the application and G Suite domain. 
+In our scenario, App Dev wants to build an application that accesses user data on the domain. They determine the APIs and list of API scopes to be used. What's missing is the credentials needed for authentication between the application and G Suite domain. 
 
 ![app-scopes]
 
 ## The GCP Admin
 
-In order to get the credentials, the development team asks the GCP Admin for a service account with DwD enabled. The GCP Admin chooses a service account and makes the json keyfile available to the developers.
+In order to get the credentials, App Dev asks the GCP Admin for a service account with DwD enabled. The GCP Admin chooses a service account and makes the json keyfile available to the developers.
 
 ![service-account-request]
 
