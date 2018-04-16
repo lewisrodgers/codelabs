@@ -1,0 +1,10 @@
+
+<p>
+  Selected: {{ selectedUnit.name }}
+</p>
+
+<ul>
+  <li *ngFor="let unit of units" (click)="onSelect(unit)">
+    {{unit.name}}
+  </li>
+</ul>
