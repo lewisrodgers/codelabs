@@ -11,3 +11,16 @@ credentials_delegate = credentials.with_subject(ACCOUNT)
 ```
 
 In other words: given the client wants to clear John Doe's calendar of events (or whatever the case may be), then it will impersonate John Doe by using John's email account. 
+
+## Quick start
+
+```
+pipenv install
+pipenv shell
+```
+
+In `main.py` change the `TARGET` variable with an actual user email address from your domain. Then run the script.
+
+```
+python main.py
+```
