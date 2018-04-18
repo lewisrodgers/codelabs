@@ -1,6 +1,6 @@
 ## About
 
-Python boilerplate for service account oauth setup to return data from a Google API.
+Returns a list of users from a domain.
 
 ## Dev dependencies
 
@@ -25,7 +25,7 @@ For documentation on how to do with Java see: https://developers.google.com/api-
 
 ## Usage
 
-Pass in the email of the user to impersonate (must have G Suite admin privileges) as the first argument and the G Suite domain name as the second.
+Pass in the email of the user to impersonate (must have G Suite admin privileges) as the first argument and the G Suite domain name as the second. If all goes well, you should see a list of users from the domain.
 
 ```
 python main.py [USEREMAIL] [DOMAIN]
