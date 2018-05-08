@@ -15,6 +15,7 @@ In other words: given the client wants to clear John Doe's calendar of events (o
 ## Quick start
 
 ```
+pip install pipenv
 pipenv install
 pipenv shell
 ```
