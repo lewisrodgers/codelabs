@@ -1,8 +1,8 @@
 {
   "name": "jwt-to-token",
   "version": "1.0.0",
-  "description": "",
-  "main": "jot.js",
+  "description": "Helper utility for issuing OAuth2 Google API requests through the command-line",
+  "main": "sign-jwt.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
