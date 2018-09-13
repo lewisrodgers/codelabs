@@ -1,0 +1,17 @@
+{
+  "name": "observables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "clear-input.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.2.2",
+    "rxjs-compat": "^6.2.2"
+  }
+}
