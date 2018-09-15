@@ -3,9 +3,11 @@ import logging.config
 
 import yaml
 
-with open('config.yaml', 'r') as f:
-    config = yaml.safe_load(f)
-    logging.config.fileConfig(config)
+
+with open('config.yaml') as f:
+    config = yaml.load(f)
+    logging.warning(config)
+    logging.config.dictConfig(config)
 
 # create logger
 logger = logging.getLogger('simpleExample')
