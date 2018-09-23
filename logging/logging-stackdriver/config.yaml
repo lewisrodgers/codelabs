@@ -1,0 +1,17 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(message)s - %(levelname)s"
+handlers:
+  console:
+    "()": "cloud_logger.setup"
+    level: INFO
+    formatter: simple
+loggers:
+  <module>:
+    handlers: [console]
+    propagate: no
+root:
+  level: INFO
+  handlers: [console]
