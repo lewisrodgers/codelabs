@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/decoded-keel-200715/eslint', '.']
+- name: gcr.io/cloud-builders/docker
+  args: ['run', '-w', '/app', 'gcr.io/decoded-keel-200715/eslint']
