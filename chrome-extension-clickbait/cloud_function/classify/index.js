@@ -1,11 +1,12 @@
 const automl = require('@google-cloud/automl');
+const config = require('./config');
 
 function predict(req, res) {
   const client = new automl.PredictionServiceClient();
 
   client
     .predict({
-      name: client.modelPath('decoded-keel-200715', 'us-central1', 'TCN7312655095228328642'),
+      name: client.modelPath(config.PROJECT_ID, config.REGION, config.MODEL_ID),
       payload: {
         textSnippet: {
           content: req.body.message
