@@ -57,3 +57,7 @@ The `classify` cloud function makes a call to the AutoML model — passing in th
 ## Architecture
 
 todo
+
+## Tests
+
+Open `spec/index.html` in the browser to run unit tests.
