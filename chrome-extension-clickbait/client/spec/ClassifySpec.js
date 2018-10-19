@@ -1,23 +1,24 @@
-const exampleModelResponse = {
+// Example response classifies heading as clickbait.
+const exampleModelResponse = `{
   "payload":[
     {"annotationSpecId":"","displayName":"clickbait","classification":{"score":0.9152950048446655},"detail":"classification"},
     {"annotationSpecId":"","displayName":"no_clickbait","classification":{"score":0.08470500260591507},"detail":"classification"}
   ],
   "metadata":{}
-};
+}`;
 
 describe("Classify", function() {
+  const headline = "Hello world!"
   let classify;
 
   beforeEach(function() {
     document.getElementById('fixture').innerHTML = `
-      <h2>Hello</h2>
+      <h2>${headline}</h2>
     `;
     const headings = document.getElementById('fixture').getElementsByTagName('h2');
-    const h2 = headings[0];
+    const heading = headings[0];
 
-    classify = new Classify();
-    classify.headline(h2);
+    classify = new Classify(heading);
   })
 
   afterEach(function() {
@@ -50,7 +51,7 @@ describe("Classify", function() {
       })
   
       it("should call the cloud function endpoint", function() {
-        expect(classify.predict).toHaveBeenCalledWith('Hello');
+        expect(classify.predict).toHaveBeenCalledWith(headline);
       })
     })
   
@@ -61,11 +62,9 @@ describe("Classify", function() {
         classify.handleResponse(data);
       })
   
-      it("should insert `displayName` property of response into original HTML heading element", function() {
-        expect(classify.elem.innerHTML).toBe(data.payload[0].displayName);
+      it("should set color style property to red", function() {
+        expect(classify.elem.style.color).toBe('red');
       })
     })
   })
-
-  
 })
