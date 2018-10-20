@@ -28,7 +28,7 @@ exports.classify = (req, res) => {
   if (req.method === 'OPTIONS') {
     res.set('Access-Control-Allow-Methods', 'POST');
     res.set('Access-Control-Allow-Headers', 'Content-Type');
-    // res.set('Access-Control-Max-Age', '3600');
+    res.set('Access-Control-Max-Age', '3600');
     res.status(204).send('');
   } else {
     res.set('Access-Control-Allow-Origin', '*');
