@@ -25,7 +25,7 @@ describe("Classify", function() {
     document.getElementById('fixture').innerHTML = '';
   })
 
-  describe("model endopint configuration", function() {
+  describe("configuration for AutoML model", function() {
     const config = {
       REGION: 'us-east1',
       PROJECT_ID: 'foo',
@@ -36,14 +36,15 @@ describe("Classify", function() {
       classify.model(config);
     })
 
-    it("should set properly formatted cloud function endpoint url", function() {
+    it("should set a properly formatted cloud function endpoint URL. I.e., https://$REGION-$PROJECT_ID.cloudfunctions.net/$FUNCTION_NAME", function() {
       const url = 'https://us-east1-foo.cloudfunctions.net/bar';
       expect(classify.endpoint).toBe(url)
     })
   })
 
   describe("predict", function() {
-    describe("input", function() {
+    
+    describe("request", function() {
       
       beforeEach(function() {
         spyOn(classify, 'predict');
@@ -55,16 +56,42 @@ describe("Classify", function() {
       })
     })
   
-    describe("output", function() {
+    describe("response", function() {
       const data = exampleModelResponse;
   
       beforeEach(function() {
+        spyOn(classify, 'render');
         classify.handleResponse(data);
       })
   
-      it("should set color style property to red", function() {
-        expect(classify.elem.style.color).toBe('red');
+      it("should process the response and set classification label and score properties", function() {
+        expect(classify.classification.label).toBeDefined();
+        expect(classify.classification.score).toBeDefined();
       })
+
+      it("should render output", function() {
+        expect(classify.render).toHaveBeenCalled();
+      })
+    })
+
+  })
+
+  describe("render", function() {
+    const data = {
+      score: 0.9152950048446655
+    };
+
+    beforeEach(function() {
+      classify.render(data);
+      elem = document.getElementById('fixture').children[0];
+    })
+
+    it("should convert the decimal number — classification score property from the response — into a whole number", function() {
+      expect(classify.format(data.score)).toBe(91)
+    })
+
+    it("should add a `span` element within the headline parent element", function() {
+      expect(elem.children[0].tagName).toBe('SPAN');
     })
   })
 })
